@@ -16,7 +16,7 @@ jobs:
 
   dev-deploy:
     name: Deploy Dev Environment for the Application
-    # needs: [ci-workflow]
     uses: akshayorgtw/called/.github/workflows/deploy.yaml@main
+    with:
       appName: luckyroll
     secrets: inherit
