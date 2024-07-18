@@ -7,16 +7,16 @@ on:
       - main
 
 jobs:
-  ci-workflow:
-    name: Run CI workflow for the Application
-    uses: akshayorgtw/called/.github/workflows/backend-ci.yaml@main
-    with:
-      appName: luckyroll
-    secrets: inherit
-
-  # dev-deploy:
-  #   name: Deploy Dev Environment for the Application
-  #   needs: [ci-workflow]
-  #   uses: ./.github/workflows/deploy.yaml
+  # ci-workflow:
+  #   name: Run CI workflow for the Application
+  #   uses: akshayorgtw/called/.github/workflows/backend-ci.yaml@main
+  #   with:
   #     appName: luckyroll
   #   secrets: inherit
+
+  dev-deploy:
+    name: Deploy Dev Environment for the Application
+    # needs: [ci-workflow]
+    uses: akshayorgtw/called/.github/workflows/deploy.yaml@main
+      appName: luckyroll
+    secrets: inherit
